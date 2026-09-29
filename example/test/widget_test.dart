@@ -8,6 +8,10 @@ void main() {
     await tester.pumpWidget(const EditProfileApp());
     await tester.pumpAndSettle();
 
+    // Navigate from HomeScreen to EditProfileScreen
+    await tester.tap(find.widgetWithText(FilledButton, 'Edit Profile'));
+    await tester.pumpAndSettle();
+
     // Verify initial values appear
     expect(find.text('Raj Kumar Timalsina'), findsOneWidget);
     expect(find.text('raj@example.com'), findsOneWidget);

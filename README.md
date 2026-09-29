@@ -32,6 +32,18 @@ Developers frequently encounter several subtle challenges when implementing this
 
 ---
 
+## What This Package Does NOT Do
+
+To maintain a clean, predictable, and single-purpose architecture, `form_dirty_state` explicitly excludes functionality that belongs in other layers of your application:
+
+- **No Form Validation**: It does not validate fields, check regex patterns, or enforce required inputs. Use dedicated validation libraries or standard form validation mechanisms alongside this package.
+- **No UI Widgets or Dialogs**: It does not render form fields, confirmation modals, or leave-guard dialogs. You control your UI and can bind `isDirty` to whatever confirmation dialog or navigation guard your app uses (such as Flutter's `PopScope`).
+- **No Networking or API Handling**: It does not make HTTP requests, handle serialization, or perform database operations. It simply prepares the `changes` diff for your networking client.
+- **No Framework State Management**: It does not mandate or implement BLoC, Riverpod, Provider, or signals. It provides lightweight, synchronous listeners that wire into any state management solution in a few lines.
+- **No Automatic Keystroke Debouncing**: It performs immediate, synchronous diffing on calls to `update()`. If debouncing is desired for high-frequency input, implement it at the UI controller or input stream layer.
+
+---
+
 ## Installation
 
 Add `form_dirty_state` to your `pubspec.yaml`:

@@ -1,11 +1,19 @@
 name: form_dirty_state
-description: A lightweight, zero-dependency Dart package for detecting and managing unsaved form state changes with deep equality and defensive snapshotting.
+description: A lightweight, zero-dependency Dart package for tracking unsaved form changes with deep equality and defensive snapshots.
 version: 1.0.0
+
 repository: https://github.com/irajkumarr/form_dirty_state
 issue_tracker: https://github.com/irajkumarr/form_dirty_state/issues
 
+topics:
+  - forms
+  - state-management
+  - dirty-state
+  - dart
+  - flutter
+
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dev_dependencies:
   lints: ^3.0.0

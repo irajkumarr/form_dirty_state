@@ -8,10 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2026-09-29
 
 ### Added
+
 - Initial stable release of `form_dirty_state`.
-- `DirtyForm`: Core controller for tracking form dirty states, inspecting modified keys, changes, and baseline values.
-- Deep equality engine for nested lists, maps, sets, primitives, `double.nan`, and cross-timezone `DateTime`.
-- Defensive snapshotting preventing internal and external reference leaks and mutations.
-- `reset([key])` support for resetting the entire form or a specific field.
-- `markSaved()` support for committing the current state as the new baseline after saving.
-- Lightweight synchronous change notifications with `addListener()` and unbind closure.
+- `DirtyFormController` for tracking form dirty state.
+- Field-level dirty state inspection with `isFieldDirty()`.
+- Modified field inspection with `dirtyFields`.
+- Changed-value extraction with `changes`.
+- Baseline and current value inspection.
+- Deep equality for supported nested collections and values.
+- Defensive snapshotting to protect internal state.
+- `reset()` support for restoring baseline values.
+- `markSaved()` support for establishing a new baseline.
+- Synchronous change notifications through `onChanged` and listeners.
